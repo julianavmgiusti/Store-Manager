@@ -29,11 +29,12 @@
   "dependencies": {
     "@hapi/boom": "^9.1.0",
     "body-parser": "^1.19.0",
-    "dotenv": "^8.2.0",
+    "dotenv": "^8.6.0",
     "express": "^4.17.1",
     "express-rescue": "^1.1.26",
     "joi": "^17.6.0",
     "mysql2": "^2.3.0",
+    "scripts-dev": "^1.1.0",
     "shelljs": "^0.8.5"
   },
   "devDependencies": {
@@ -47,5 +48,9 @@
     "nyc": "^15.1.0",
     "sinon": "^11.1.1",
     "supertest": "^6.2.2"
-  }
+  },
+  "directories": {
+    "test": "tests"
+  },
+  "keywords": []
 }
