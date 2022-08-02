@@ -100,4 +100,4 @@ describe('Controller layer test', () => {
       });
     })
   });
-})
+});
