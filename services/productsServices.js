@@ -31,8 +31,9 @@ const updateProduct = async (id, name) => {
   }
 
   const result = await productsModel.updateProduct(id, name);
-  if (result.length === 0)
-    return { error: { code: 404, message: "Product not found" } };
+  if (result.length === 0) {
+    return { error: { code: 404, message: 'Product not found' } };
+  }
   return result;
 };
 

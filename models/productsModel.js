@@ -42,6 +42,6 @@ const updateProduct = async (id, name) => {
     name,
   };
   return res;
-}
+};
 
 module.exports = { getAll, getById, registerNewProduct, updateProduct };
