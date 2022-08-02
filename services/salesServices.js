@@ -40,6 +40,25 @@ const addSaleProduct = async (newSales) => {
   };
 };
 
+const getSales = async () => {
+  const results = await salesModel.getSales();
+
+  if (!results) return [];
+
+  return results;
+};
+
+const getSaleById = async (id) => {
+  const result = await salesModel.getSaleById(id);
+
+  if (!result) return [];
+
+  return result;
+};
+
+
 module.exports = {
   addSaleProduct,
+  getSales,
+  getSaleById,
 };
