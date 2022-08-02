@@ -1,9 +1,9 @@
 const httpStatusCode = require('../db/httpStatusCode');
-const productsService = require('../services/productsServices');
+const productsServices = require('../services/productsServices');
 
 const getAll = async (_req, res) => {
   try {
-    const products = await productsService.getAll();
+    const products = await productsServices.getAll();
     if (!products) {
       return res.status(404).json({ message: 'Product not found' });
     }
@@ -16,7 +16,7 @@ const getAll = async (_req, res) => {
 const getById = async (req, res) => {
   const { id } = req.params;
   try {
-    const product = await productsService.getById(id);
+    const product = await productsServices.getById(id);
     if (!product || product.length < 1) {
       return res
         .status(404)
@@ -31,7 +31,7 @@ const getById = async (req, res) => {
 const registerNewProduct = async (req, res) => {
     try {
       const { name } = req.body;
-      const newProduct = await productsService.registerNewProduct(name);
+      const newProduct = await productsServices.registerNewProduct(name);
 
       if (!newProduct.name || newProduct.length < 1) {
         return res.status(httpStatusCode.BAD_REQUEST).json({ message: '"name" is required' });
@@ -47,4 +47,15 @@ const registerNewProduct = async (req, res) => {
     }
 };
 
-module.exports = { getAll, getById, registerNewProduct };
+const updateProduct = async (req, res) => {
+  const { name } = req.body;
+  const { id } = req.params;
+
+  const result = await productsServices.updateProduct(id, name);
+    if (result.error) {
+    return res.status(result.error.code).json({ message: result.error.message });
+  }
+  res.status(200).send(result);
+};
+
+module.exports = { getAll, getById, registerNewProduct, updateProduct };
