@@ -45,4 +45,15 @@ const deleteProduct = async (id) => {
   return result;
 };
 
-module.exports = { getAll, getById, registerNewProduct, updateProduct, deleteProduct };
+const searchByName = async (name) => {
+  const result = await productsModel.searchByName(name);
+
+  if (!result) return [];
+
+  return result;
+};
+
+module.exports = {
+  getAll, getById, registerNewProduct, updateProduct,
+  deleteProduct, searchByName
+};
