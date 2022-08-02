@@ -54,6 +54,10 @@ const searchByName = async (name) => {
 };
 
 module.exports = {
-  getAll, getById, registerNewProduct, updateProduct,
-  deleteProduct, searchByName
+  getAll,
+  getById,
+  registerNewProduct,
+  updateProduct,
+  deleteProduct,
+  searchByName,
 };

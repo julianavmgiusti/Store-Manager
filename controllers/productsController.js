@@ -80,6 +80,10 @@ const searchByName = async (req, res) => {
 };
 
 module.exports = {
-  getAll, getById, registerNewProduct, updateProduct,
-  deleteProduct, searchByName,
+  getAll,
+  getById,
+  registerNewProduct,
+  updateProduct,
+  deleteProduct,
+  searchByName,
 };
