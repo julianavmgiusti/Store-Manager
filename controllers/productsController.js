@@ -71,5 +71,4 @@ const deleteProduct = async (req, res) => {
   res.status(204).json(result);
 };
 
-
 module.exports = { getAll, getById, registerNewProduct, updateProduct, deleteProduct };
