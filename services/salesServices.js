@@ -56,7 +56,6 @@ const getSaleById = async (id) => {
   return result;
 };
 
-
 module.exports = {
   addSaleProduct,
   getSales,

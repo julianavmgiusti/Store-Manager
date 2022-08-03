@@ -27,7 +27,7 @@ const getSales = async () => {
       FROM StoreManager.sales_products AS sales_products
       RIGHT JOIN StoreManager.sales AS sales
       ON sales.id = sales_products.sale_id
-      ORDER BY sale_id ASC, product_id ASC`
+      ORDER BY sale_id ASC, product_id ASC`,
   );
   return rows;
 };
